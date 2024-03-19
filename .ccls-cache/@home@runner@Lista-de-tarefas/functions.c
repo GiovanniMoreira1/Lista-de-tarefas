@@ -1,11 +1,27 @@
-#include <stdio.h>;
+#include "functions.h"
+#include <stdio.h>
 
-void criar_tarefa() { printf("Criar tarefa\n"); }
+int criar_tarefa(Tarefa tarefas[], int *pos) {
+  printf("Criar tarefa\n");
+  return 0;
+}
 
-void listar_tarefa() { printf("Listar tarefas\n"); }
+int listar_tarefa(Tarefa tarefas[], int *pos) {
+  printf("Listar tarefas\n");
+  return 0;
+}
 
-void deletar_tarefa() { printf("Deletar tarefa\n"); }
+int deletar_tarefa(Tarefa tarefas[], int pos) {
+  printf("Deletar tarefa\n");
+  return 0;
+}
 
-void salvar_binario() { printf("Salvar tarefa\n"); }
+int salvar_binario(Tarefa tarefas[], int total, int pos) {
+  printf("Salvar tarefa\n");
+  return 0;
+}
 
-void escrever_binario() { printf("Escrever tarefa\n"); }
+int escrever_binario(Tarefa tarefas[], int total, int pos) {
+  printf("Escrever tarefa\n");
+  return 0;
+}
