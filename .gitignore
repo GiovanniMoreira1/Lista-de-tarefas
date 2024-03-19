@@ -45,6 +45,7 @@
 # Replit
 *.local
 *.ccls-cache
+*.breakpoints
 *.replit
 *replit.nix
 *Makefile
