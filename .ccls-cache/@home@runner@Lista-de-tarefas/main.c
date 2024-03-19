@@ -1,7 +1,9 @@
 #include "functions.h"
 #include <stdio.h>
 
-int main(void) {
+int main() {
+  int TOTAL;
+  
   int opcao;
   do {
     printf("| > Menu principal: \n");
