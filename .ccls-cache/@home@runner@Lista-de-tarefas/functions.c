@@ -18,12 +18,12 @@ int criar_tarefa(Tarefa tarefas[], int *pos) {
   return 0;
 }
 
-int listar_tarefa(Tarefa tarefas[], int pos) {
-  if (pos == 0)
+int listar_tarefa(Tarefa tarefas[], int *pos) {
+  if (*pos == 0)
     return 1;
 
-  for (int i = 0; i < pos; i++) {
-    printf("|Pos: %d\t", i + 1);
+  for (int i = 0; i < *pos; i++) {
+    printf("|Pos: %d\n", i + 1);
     printf("|Prioridade: %d\t", tarefas[i].prioridade);
     printf("|Categoria: %s", tarefas[i].categoria);
     printf("|Descrição: %s\n", tarefas[i].descricao);
@@ -32,8 +32,9 @@ int listar_tarefa(Tarefa tarefas[], int pos) {
   return 0;
 }
 
-int deletar_tarefa(Tarefa tarefas[], int pos) {
-  printf("Deletar tarefa\n");
+int deletar_tarefa(Tarefa tarefas[], int *pos) {
+  if (*pos == 0)
+    return 1;
   return 0;
 }
 
