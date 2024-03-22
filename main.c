@@ -1,5 +1,6 @@
 #include "functions.h"
 #include <stdio.h>
+#include <string.j>
 
 int main() {
   int TOTAL;
