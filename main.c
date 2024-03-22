@@ -16,12 +16,13 @@ int main() {
     printf("|-------------------------\n");
     printf("  Digite a opção desejada:\n");
     int i = scanf("%d", &opcao);
+    clearBuffer();
     if (opcao == 1) {
       criar_tarefa(tarefas, &pos);
     } else if (opcao == 2) {
-      deletar_tarefa(tarefas, &pos);
+      listar_tarefa(tarefas, pos);
     } else if (opcao == 3) {
-      listar_tarefa(tarefas, &pos);
+      deletar_tarefa(tarefas, pos);
     } else if (opcao == 4) {
       printf("Saindo...\n");
     } else {
