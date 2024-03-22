@@ -1,15 +1,14 @@
-#include <stdio.h>
 #define TOTAL 100
-
-void criar_tarefa();
-void listar_tarefa();
-void deletar_tarefa();
-void salvar_binario();
-void escrever_binario();
-
-typedef struct{
+typedef struct {
   int prioridade;
   char descricao[300];
   char categoria[100];
-  
+
 } Tarefa;
+// Hello guys
+int criar_tarefa(Tarefa tarefas[], int *pos);
+int listar_tarefa(Tarefa tarefas[], int *pos);
+int deletar_tarefa(Tarefa tarefas[], int *pos);
+int salvar_binario(Tarefa tarefas[], int total, int pos);
+int escrever_binario(Tarefa tarefas[], int total, int pos);
+void clearBuffer();
