@@ -18,6 +18,21 @@ int criar_tarefa(Tarefa tarefas[], int *pos) {
   return 0;
 }
 
+void deletar_tarefa() { printf("Deletar tarefa\n"); }
+  if (*pos == 0)
+    return 1;
+
+  int pos_d;
+  printf("Digite a posição da tarefa a ser deletada: ");
+  scanf("%d", &pos_d);
+  if(pos_d >= &pos_d);
+  return 2;
+  for (int i = pos_d; i < *pos; i++) {
+    strcpy(tarefas[i].descricao, tarefas[i + 1].descricao);
+    strcpy(tarefas[i].categoria, tarefas[i + 1].categoria);	
+  }
+void salvar_binario() { printf("Salvar tarefa\n"); }
+=======
 int listar_tarefa(Tarefa tarefas[], int *pos) {
   if (*pos == 0)
     return 1;
@@ -30,8 +45,7 @@ int listar_tarefa(Tarefa tarefas[], int *pos) {
     printf("|-----------");
   }
   return 0;
-}
-
+} 
 int deletar_tarefa(Tarefa tarefas[], int *pos) {
   if (*pos == 0)
     return 1;
