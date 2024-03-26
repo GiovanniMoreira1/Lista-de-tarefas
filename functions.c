@@ -58,12 +58,47 @@ int listar_tarefa(Tarefa tarefas[], int *pos) {
 } 
 
 int salvar_binario(Tarefa tarefas[], int total, int pos) {
-  printf("Salvar tarefa\n");
+  FILE *f = fopen("tarefas", "wb");
+  if(f == NULL)
+    return 1;
+
+  int e = fwrite(tarefas, total, sizeof(Tarefa), f);
+  if(e <= 0)
+    return 2;
+
+  e = fwrite(&pos, 1, sizeof(int), f);
+  if(e <= 0)
+    return 2;
+
+  e = fclose(f);
+  if(e != 0)
+    return 3;
+
   return 0;
 }
 
 int escrever_binario(Tarefa tarefas[], int total, int pos) {
   printf("Escrever tarefa\n");
+  return 0;
+}
+
+int carregar(Tarefa tarefas[], int total, int *pos) {
+  FILE *f = fopen("tarefas", "rb");
+  if(f == NULL)
+    return 1;
+
+  int e = fread(tarefas, total, sizeof(Tarefa), f);
+  if(e <= 0)
+    return 2;
+
+  e = fread(pos, 1, sizeof(int), f);
+  if(e <= 0)
+    return 2;
+
+  e = fclose(f);
+  if(e != 0)
+    return 3;
+
   return 0;
 }
 

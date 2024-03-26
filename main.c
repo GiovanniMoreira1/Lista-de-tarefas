@@ -6,6 +6,10 @@ int main() {
   int pos = 0;
   Tarefa tarefas[TOTAL];
 
+  int e = carregar(tarefas, TOTAL, &pos);
+  if (e != 0)
+    pos = 0;
+
   int opcao;
   do {
     printf("|-------------------------\n");
@@ -26,6 +30,7 @@ int main() {
       deletar_tarefa(tarefas, &pos);
     } else if (opcao == 4) {
       printf("Saindo...\n");
+      salvar_binario(tarefas, TOTAL, pos);
     } else {
       printf("Opção inválida!\n");
     }
