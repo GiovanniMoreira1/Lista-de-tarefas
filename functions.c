@@ -1,37 +1,47 @@
 #include "functions.h"
 #include <stdio.h>
+#include <string.h>
 
 int criar_tarefa(Tarefa tarefas[], int *pos) {
   if (*pos >= TOTAL)
     return 1;
 
-  printf("Digite a prioridade da tarefa: ");
+  printf("Entre com a prioridade: ");
   scanf("%d", &tarefas[*pos].prioridade);
   clearBuffer();
-  printf("Digite a categoria da tarefa: ");
+  printf("Entre com a categoria: ");
   fgets(tarefas[*pos].categoria, 100, stdin);
   clearBuffer();
-  printf("Digite a descrição  da tarefa: ");
-  fgets(tarefas[*pos].descricao, 100, stdin);
-  clearBuffer();
+  printf("Entre com a descricao: ");
+  fgets(tarefas[*pos].descricao, 300, stdin);
+
   *pos = *pos + 1;
+
   return 0;
 }
 
-int deletar_tarefa() { printf("Deletar tarefa\n"); }
+int deletar_tarefa(Tarefa tarefas[], int *pos) {
   if (*pos == 0)
     return 1;
 
   int pos_d;
-  printf("Digite a posição da tarefa a ser deletada: ");
+  printf("Entre com a posicao da tarefa: ");
   scanf("%d", &pos_d);
-  if(pos_d >= &pos_d);
-  return 2;
+  pos_d--;
+  if (pos_d >= *pos)
+    return 2;
+
   for (int i = pos_d; i < *pos; i++) {
+    tarefas[i].prioridade = tarefas[i + 1].prioridade;
+    strcpy(tarefas[i].categoria, tarefas[i + 1].categoria);
     strcpy(tarefas[i].descricao, tarefas[i + 1].descricao);
-    strcpy(tarefas[i].categoria, tarefas[i + 1].categoria);	
   }
-int salvar_binario() { printf("Salvar tarefa\n"); }
+
+  *pos = *pos - 1;
+
+  return 0;
+}
+
 
 int listar_tarefa(Tarefa tarefas[], int *pos) {
   if (*pos == 0)
@@ -59,6 +69,6 @@ int escrever_binario(Tarefa tarefas[], int total, int pos) {
 
 void clearBuffer() {
   int c;
-  while ((c = getchar()) != '\n' && c != EOF)
-    ;
+  while ((c = getchar()) != '\n' && c != EOF) {
+  }
 }

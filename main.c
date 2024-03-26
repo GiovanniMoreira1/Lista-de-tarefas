@@ -1,6 +1,6 @@
 #include "functions.h"
 #include <stdio.h>
-#include <string.j>
+#include <string.h>
 
 int main() {
   int pos = 0;
@@ -21,9 +21,9 @@ int main() {
     if (opcao == 1) {
       criar_tarefa(tarefas, &pos);
     } else if (opcao == 2) {
-      listar_tarefa(tarefas, pos);
+      listar_tarefa(tarefas, &pos);
     } else if (opcao == 3) {
-      deletar_tarefa(tarefas, pos);
+      deletar_tarefa(tarefas, &pos);
     } else if (opcao == 4) {
       printf("Saindo...\n");
     } else {
